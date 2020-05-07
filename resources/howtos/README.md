@@ -6,3 +6,4 @@ How-to guides take the reader through the steps required to solve a real-world p
 
 - [How to implement Instant Search within 5 minutes in your React App!](/resources/howtos/meilisearch_react.md)
     Learn how to create an instant search in react using MeiliSearch.
+- [How to integrate a relevant search bar to your docs](./search_bar_for_docs.md)
