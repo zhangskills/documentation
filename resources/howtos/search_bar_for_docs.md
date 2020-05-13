@@ -33,7 +33,7 @@ The Meili team provides and maintains a [scraper tool](https://github.com/meilis
 
 ### Configuration File
 
-The scraper needs a configuration file to know the content to be scraped thanks to the selectors (e.g. the HTML tag).
+The scraper tool needs a configuration file to know what content you want to scrape, this is done by providing selectors (e.g. the HTML tag).
 
 Here is an example of a basic configuration file:
 
