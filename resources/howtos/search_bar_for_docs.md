@@ -23,7 +23,7 @@ If you get used to the DigitalOcean droplets, you can easily [create one](https:
 
 ::: note
 
-The host URL and the API key you will provide in the next steps are the credentials of this MeiliSearch instance.
+The host URL and the API key you will provide in the next steps correspond to the credentials of this MeiliSearch instance.
 
 :::
 
