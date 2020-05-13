@@ -68,7 +68,7 @@ The `index_uid` field is the index identifier in your MeiliSearch instance in wh
 
 The `docs-content` class is the main container of the textual content in this example. Most of the time, this tag is a `<main>` or an `<article>` HTML element.
 
-`lvlX` selectors should use the standard title tags like `h1`, `h2`, `h3`, etc. You can also use static classes. Set a unique id or name attribute to these elements.
+`lvlX` selectors should use the standard title tags like `h1`, `h2`, `h3`, etc. You can also use static classes. Set a unique `id` or `name` attribute to these elements.
 
 Every searchable `lvl` elements outside this main documentation container (for instance, in a sidebar) must be `global` selectors. They will be globally picked up and injected to every record built from your page.
 
