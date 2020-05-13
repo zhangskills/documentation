@@ -96,7 +96,7 @@ If you don't want to use Docker, here are [other ways to run the scraper](https:
 `<your-meilisearch-host-url>` and `<your-meilisearch-api-key>` should be replaced by the credentials of the MeiliSearch instance you set up at [the first step](./search_bar_for_docs.md#run-a-meilisearch-instance).
 `<absolute-path-to-your-config-file>` should be the **absolute** path of your configuration file defined at [the previous step](./search_bar_for_docs.md#configuration-file).
 
-The API key you must provide should have the permissions to add documents into your MeiliSearch instance. Thus, you need to provide the private key or the master key.
+The API key you must provide should have the permissions to add documents into your MeiliSearch instance. Thus, you need to provide the private key.
 _More about [MeiliSearch authentication](/guides/advanced_guides/authentication.md)._
 
 ::: tip
