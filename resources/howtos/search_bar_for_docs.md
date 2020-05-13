@@ -6,7 +6,7 @@ You might have noticed the search bar in this documentation.
 
 And you might need the same for yours!
 
-This tutorial aims to detail the steps to set up a relevant and powerful search bar in your documentation with MeiliSearch 🚀
+This tutorial aims to explain in detail the required steps to set up a relevant and powerful search bar in your documentation with MeiliSearch 🚀
 
 1. [Run a MeiliSearch Instance](#run-a-meilisearch-instance)
 2. [Scrap your content](#scrap-your-content)
