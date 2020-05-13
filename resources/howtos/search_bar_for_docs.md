@@ -4,9 +4,9 @@ You might have noticed the search bar in this documentation.
 
 ![MeiliSearch docs search bar demo](/tuto-searchbar-for-docs/vuepress-searchbar-demo.gif)
 
-And you might need the same for yours!
+And you are probably wanting the same for your own documentation!
 
-This tutorial aims to detail the steps to set up a relevant and powerful search bar in your documentation with MeiliSearch 🚀
+This tutorial aims to explain in detail the required steps to set up a relevant and powerful search bar in your documentation with MeiliSearch 🚀
 
 1. [Run a MeiliSearch Instance](#run-a-meilisearch-instance)
 2. [Scrap your content](#scrap-your-content)
@@ -23,7 +23,7 @@ If you get used to the DigitalOcean droplets, you can easily [create one](https:
 
 ::: note
 
-The host URL and the API key you will provide in the next steps are the credentials of this MeiliSearch instance.
+The host URL and the API key you will provide in the next steps correspond to the credentials of this MeiliSearch instance.
 
 :::
 
@@ -35,7 +35,7 @@ The Meili team provides and maintains a [scraper tool](https://github.com/meilis
 
 The scraper needs a configuration file to know the content to be scraped thanks to the selectors (e.g. the HTML tag).
 
-Here is a basic configuration file:
+Here is an example of a basic configuration file:
 
 ```json
 {
