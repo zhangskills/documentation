@@ -29,7 +29,7 @@ The host URL and the API key you will provide in the next steps correspond to th
 
 ## Scrap your Content
 
-The Meili team provides and maintains a [scraper tool](https://github.com/meilisearch/docs-scraper) to scrap your website content and automatically index it into MeiliSearch.
+The Meili team provides and maintains a [scraper tool](https://github.com/meilisearch/docs-scraper) to automatically read the content of your website and store it into an index in MeiliSearch.
 
 ### Configuration File
 
