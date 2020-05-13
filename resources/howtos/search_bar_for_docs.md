@@ -16,10 +16,16 @@ This tutorial will guide you through the step of building a relevant and powerfu
 
 First of all, you need your documentation content to be scraped and pushed into a MeiliSearch instance.
 
-This can be done in a few steps. MeiliSearch is open-source and can run on your own server!
+You can install and run MeiliSearch on your machine using `curl`.
 
-Check out this well-explained tutorial about [how to run MeiliSearch in production](/resources/tutorials/running_production.md).
-If you are used to DigitalOcean droplets, you can easily [create one](https://marketplace.digitalocean.com/apps/meilisearch?action=deploy&refcode=7c67bd97e101).
+```bash
+$ curl -L https://install.meilisearch.com | sh
+$ ./meilisearch
+```
+
+There are [other ways to install MeiliSearch](/guides/introduction/quick_start_guide.md#download-and-launch).
+
+MeiliSearch is open-source and can run either on you server or on any cloud provider.
 
 ::: note
 
@@ -72,7 +78,7 @@ The `docs-content` class is the main container of the textual content in this ex
 
 Every searchable `lvl` elements outside this main documentation container (for instance, in a sidebar) must be `global` selectors. They will be globally picked up and injected to every document built from your page.
 
-If you use Vuepress for your documentation, you can check out the [configuration file](https://github.com/meilisearch/documentation/blob/master/.vuepress/scraper/config.json) we use in production.
+If you use Vuepress for your documentation, you can check out the [configuration file](https://github.com/meilisearch/documentation/blob/master/.vuepress/docs-scraper/docs-scraper.config.json) we use in production.
 In our case, the main container is `theme-default-content` and the selector the titles and sub-titles are `h1`, `h2`...
 
 ### Run the Scraper
@@ -81,6 +87,7 @@ You can run the scraper with Docker:
 
 ```bash
 $ docker run -t --rm \
+    --network=host \
     -e MEILISEARCH_HOST_URL=<your-meilisearch-host-url> \
     -e MEILISEARCH_API_KEY=<your-meilisearch-api-key> \
     -v <absolute-path-to-your-config-file>:/docs-scraper/config.json \
@@ -131,8 +138,8 @@ module.exports = {
     [
       "vuepress-plugin-meilisearch",
       {
-        "hostUrl": "https://mymeilisearch.com",
-        "apiKey": "XXX",
+        "hostUrl": "<your-meilisearch-host-url>",
+        "apiKey": "<your-meilisearch-api-key>",
         "indexUid": "docs"
       }
     ],
@@ -170,8 +177,8 @@ If you don't use Vuepress for your documentation, we provide a [front-end SDK](h
     <script src="https://cdn.jsdelivr.net/npm/docs-searchbar.js@{version}/dist/cdn/docs-searchbar.min.js"></script>
     <script>
       docsSearchBar({
-        hostUrl: 'https://mymeilisearch.com',
-        apiKey: 'XXX',
+        hostUrl: '<your-meilisearch-host-url>',
+        apiKey: '<your-meilisearch-api-key>',
         indexUid: 'docs',
         inputSelector: '#search-bar-input',
         debug: true // Set debug to true if you want to inspect the dropdown
@@ -199,3 +206,8 @@ The default behavior of this library fits perfectly for a documentation search b
 For more concrete examples, you can check out this [basic HTML file](https://github.com/meilisearch/docs-searchbar.js/blob/master/scripts/playground.html) or [this more advanced Vue file](https://github.com/meilisearch/vuepress-plugin-meilisearch/blob/master/MeiliSearchBox.vue).
 
 :::
+
+## What's next?
+
+At this point you should have a working search engine on your website, congrats! 🎉
+You can check [this tutorial](/resources/tutorials/running_production.md) if you now want to run MeiliSearch in production!
