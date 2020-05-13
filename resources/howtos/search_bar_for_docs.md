@@ -154,7 +154,7 @@ Read more about [MeiliSearch authentication](/guides/advanced_guides/authenticat
 
 ### For All Kinds of Documentation
 
-If you don't use Vuepress for your documentation, we provide a [JS and CSS library](https://github.com/meilisearch/docs-searchbar.js) to integrate a powerful and relevant search bar to any documentation website.
+If you don't use Vuepress for your documentation, we provide a [front-end SDK](https://github.com/meilisearch/docs-searchbar.js) to integrate a powerful and relevant search bar to any documentation website.
 
 ![docs-searchbar.js example](/tuto-searchbar-for-docs/docs-searchbar-example.png)
 
