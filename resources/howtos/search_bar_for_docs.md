@@ -35,7 +35,7 @@ The Meili team provides and maintains a [scraper tool](https://github.com/meilis
 
 The scraper needs a configuration file to know the content to be scraped thanks to the selectors (e.g. the HTML tag).
 
-Here is a basic configuration file:
+Here is an example of a basic configuration file:
 
 ```json
 {
