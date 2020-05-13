@@ -19,7 +19,7 @@ First of all, you need your documentation content to be scraped and pushed into 
 This can be done in a few steps. MeiliSearch is open-source and can run on your own server!
 
 Check out this well-explained tutorial about [how to run MeiliSearch in production](/resources/tutorials/running_production.md).
-If you get used to the DigitalOcean droplets, you can easily [create one](https://marketplace.digitalocean.com/apps/meilisearch?action=deploy&refcode=7c67bd97e101).
+If you are used to DigitalOcean droplets, you can easily [create one](https://marketplace.digitalocean.com/apps/meilisearch?action=deploy&refcode=7c67bd97e101).
 
 ::: note
 
