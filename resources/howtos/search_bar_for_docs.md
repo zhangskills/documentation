@@ -66,7 +66,7 @@ Here is an example of a basic configuration file:
 
 The `index_uid` field is the index identifier in your MeiliSearch instance in which your website content is stored. The scraping tool will create a new index if it does not exist.
 
-The `docs-content` class is the main container of your textual content. Most of the time, this tag is a `<main>` or an `<article>` HTML element.
+The `docs-content` class is the main container of the textual content in this example. Most of the time, this tag is a `<main>` or an `<article>` HTML element.
 
 `lvlX` selectors should use the standard title tags like `h1`, `h2`, `h3`, etc. You can also use static classes. Set a unique id or name attribute to these elements.
 
