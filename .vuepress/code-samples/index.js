@@ -3,11 +3,11 @@ const renderSamples = require('./render')
 const { fetchRemoteSamples, fetchLocalSample } = require('./fetch')
 
 module.exports = (options, context) => {
-  const cacheContext = context
-  const cacheOptions = options
+  // const cacheContext = context
+  // const cacheOptions = options
   return {
     async ready() {
-      await fetchRemoteSamples(cacheOptions, cacheContext)
+      await fetchRemoteSamples(options, context)
     },
     beforeDevServer() {
       fetchLocalSample()
