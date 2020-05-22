@@ -1,38 +1,12 @@
 const sdks = require('./sdks.json')
-const yaml = require('js-yaml')
 const bent = require('bent')
+const { log, samplesToFiles, sampleYamlToJs } = require('./fetch-utils')
 const fs = require('fs')
-const chalk = require('chalk')
-
-const NODE_ENV = process.env.NODE_ENV || 'development'
-
-/*
- * Pretty console log function
- */
-const log = (msg, color = 'FFB4E1', label = 'CODE-SAMPLE-FETCHER') => {
-  console.log(`\n${chalk.reset.inverse.bold.hex(color)(` ${label} `)} ${msg}`)
-}
-
-/*
- * Convert YAML string to Js object
- * Throw a precise error on parsing fail.
- */
-function sampleYamlToJs(body, sdk) {
-  try {
-    return yaml.safeLoad(body)
-  } catch (e) {
-    throw new Error(`The sample file of ${sdk.label} SDK cannot be converted to JSON
-    SDK: ${sdk.label},
-    url: ${sdk.url}
-
-    ${e.stack}`)
-  }
-}
 
 /*
  * Fetches only cURL samples from local directory
  */
-function fetchLocalSamples() {
+function readLocalSample() {
   const cURLPath = `${process.cwd()}/.code-samples.meilisearch.yaml`
   const curlSamples = fs.readFileSync(cURLPath, 'utf-8')
   return [
@@ -47,10 +21,18 @@ function fetchLocalSamples() {
   ]
 }
 
+function fetchLocalSample(options, ctx) {
+  log('Fetching local file...')
+  const sample = readLocalSample()
+  log('Fetched local cURL file.')
+  samplesToFiles(sample)
+  log('Json sample file created.')
+}
+
 /**
  * Fetches all yaml file based on a list of SDK repositories URL's
  */
-async function fetchSamples() {
+async function requestSamples() {
   const fetchPromises = sdks.map(async (sdk) => {
     try {
       const body = await bent(sdk.url, 'GET', 'string')()
@@ -67,37 +49,25 @@ async function fetchSamples() {
         url: ${sdk.url}
 
         ${e.stack}`,
-        '#FFA600'
+        '#FF0000'
       )
     }
   })
   return await Promise.all(fetchPromises)
 }
 
-/*
- * Writes file in JSON format
- */
-function samplesToFiles(samples) {
-  fs.writeFileSync(
-    `${__dirname}/generated-samples.json`,
-    JSON.stringify(samples, null, 2)
-  )
+async function fetchRemoteSamples(options, ctx) {
+  if (ctx.isProd) {
+    log('Fetching remote sample files...')
+    const samples = (await requestSamples()).filter((sample) => sample)
+    log(`Fetched sample files of`)
+    samplesToFiles(samples)
+    log(`Json sample file created with the following sdk's: 
+    ${samples.map((sample) => sample.label).join('\n    ')}\n`)
+  }
 }
 
-module.exports = async () => {
-  log('Fetching sample files...')
-  let samples = {}
-  if (NODE_ENV === 'development') {
-    samples = fetchLocalSamples()
-    log('Fetched local cURL file.')
-  } else {
-    samples = (await fetchSamples()).filter((sample) => sample)
-    log(
-      `Fetched sample files of: \n\t${samples
-        .map((sample) => sample.label)
-        .join('\n\t')}\n`
-    )
-  }
-  await samplesToFiles(samples)
-  log('Json sample file created.')
+module.exports = {
+  fetchRemoteSamples,
+  fetchLocalSample,
 }

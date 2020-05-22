@@ -1,18 +1,18 @@
 const path = require('path')
 const renderSamples = require('./render')
-const fetchSamples = require('./fetch')
+const { fetchRemoteSamples, fetchLocalSample } = require('./fetch')
 
-module.exports = function() {
+module.exports = (options, context) => {
+  const cacheContext = context
+  const cacheOptions = options
   return {
-    name: 'fetch-sample-files',
-    extendCli(cli) {
-      cli
-        .command(
-          'fetch-sample-files',
-          "fetches the sample files in MeiliSearch SDK's"
-        )
-        .action(fetchSamples)
+    async ready() {
+      await fetchRemoteSamples(cacheOptions, cacheContext)
     },
+    beforeDevServer() {
+      fetchLocalSample()
+    },
+    name: 'fetch-sample-files',
     define() {
       const samples = require('./generated-samples.json')
       return {
