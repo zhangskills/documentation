@@ -23,7 +23,7 @@ This file is accessible publicly [here](docs.meilisearch.com/sample-template.yam
 Each official MeiliSearch SDK should have a sample file at its root with filled with samples in their respective language.
 The name of the file should be `.code-samples.meilisearch.yaml`.
 
-Javascript example: 
+JavaScript example: 
 ```yaml
 get_one_index_1: |-
   client.getIndex('movies').show()
