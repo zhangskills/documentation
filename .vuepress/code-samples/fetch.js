@@ -42,7 +42,7 @@ async function requestSamples() {
         label: sdk.label,
       }
     } catch (e) {
-      // Crashs are not thrown. File will be ignored and warning raised
+      // Crashes are not thrown. File will be ignored and warning raised
       log(
         `Warning: the sample file could not be fetched
         SDK: ${sdk.label},
