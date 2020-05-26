@@ -132,7 +132,7 @@ update_synonyms_1: |-
       "wow": ["world of warcraft"]
     }'
 reset_synonyms_1: |-
-  curl \
+  $ curl \
     -X DELETE 'http://localhost:7700/indexes/movies/settings/synonyms'
 get_stop_words_1: |-
   $ curl \
