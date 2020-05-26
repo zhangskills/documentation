@@ -39,7 +39,7 @@ Every other SDK sample should be available at the root of their respective repos
 
 ## Samples
 
-By the name of the `sampleId` you should know where that code sample will be added to the documentation. Based on the `cURL` example or directly by going to the right place in the documentation you should see what is expected from that sample.
+By the name of the `sampleId`, you should know where that code sample will be added to the documentation. Based on the `cURL` example or directly by going to the right place in the documentation, you should see what is expected from that sample.
 
 Each sample is expected to be **written in the respective SDK language**.
 
