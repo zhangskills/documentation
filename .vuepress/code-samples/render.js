@@ -5,7 +5,6 @@ function codeBlockWrapper(sample, language) {
 }
 
 function renderCodeSample({ sample, sampleId, language }) {
-  // if (!(sampleId.indexOf('_md') === sampleId.length - 3)) {
   if (!sampleId.match(/.*_md$/)) {
     sample = codeBlockWrapper(sample, language)
   }
