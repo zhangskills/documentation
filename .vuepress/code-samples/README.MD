@@ -3,7 +3,7 @@
 Code-sample is a MeiliSearch VuePress plugin that gathers sample files and adds them to the documentation.
 
 Each official MeiliSearch SDK should provide a filled sample file in their respective language. The files are fetched by the documentation on each build (*see next chapter*).
-Each sample of the file is added to the right place in the documentation dependening on its `sampleId`.
+Each sample of the file is added to the right place in the documentation, depending on its `sampleId`.
 
 ## Sample files
 
