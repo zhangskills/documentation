@@ -390,7 +390,7 @@ settings_guide_accept_new_fields_1: |-
         "acceptNewFields": false
     }'
 add_movies_json_1: |-
-  curl -X POST 'http://127.0.0.1:7700/indexes/movies/documents'\
+  $ curl -X POST 'http://127.0.0.1:7700/indexes/movies/documents'\
     --data @movies.json
 documents_guide_add_movie_1: |-
   curl -X POST `http://localhost:7700/indexes/movies/documents` \
