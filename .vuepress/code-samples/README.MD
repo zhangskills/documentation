@@ -44,7 +44,7 @@ By the name of the `sampleId`, you should know where that code sample will be ad
 Each sample is expected to be **written in the respective SDK language**.
 
 There is **one exception** to this rule. 
-When the sampleId finishes with `_md` it means it is expected to be written in markdown format. 
+When the sampleId finishes with `_md`, it means it is expected to be written in markdown format. 
 
 ### Example
 
