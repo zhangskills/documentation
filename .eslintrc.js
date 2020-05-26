@@ -8,7 +8,6 @@ module.exports = {
     "eslint:recommended",
     "eslint-config-standard",
     "plugin:vue/recommended",
-    "plugin:prettier/recommended",
   ],
   globals: {
     Atomics: "readonly",
@@ -24,7 +23,18 @@ module.exports = {
   plugins: ["vue", "prettier"],
   rules: {
     "vue/no-v-html": "off", //used in cases where HTML is needed
-    "prettier/prettier": "error",
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
     "vue/max-attributes-per-line": [
       2,
       {
