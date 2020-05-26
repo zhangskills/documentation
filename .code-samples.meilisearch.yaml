@@ -121,7 +121,7 @@ reset_settings_1: |-
   $ curl \
     -X DELETE 'http://localhost:7700/indexes/movies/settings'
 get_synonyms_1: |-
-  curl \
+  $ curl \
     -X GET 'http://localhost:7700/indexes/movies/settings/synonyms'
 update_synonyms_1: |-
   curl \
