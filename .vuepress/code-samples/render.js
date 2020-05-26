@@ -12,7 +12,7 @@ function renderCodeSample({ sample, sampleId, language }) {
   return htmlRender.html
 }
 
-module.exports = function(fetchedSamples) {
+module.exports = function (fetchedSamples) {
   /**  This reduce creates an object containing all samples-id with a list of the samples in the different languages
     ex: codeSamples = {
       create_index_1 : [
