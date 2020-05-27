@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 // globals CODE_SAMPLES
 export default {
   name: 'CodeSamples',
@@ -31,7 +32,15 @@ export default {
     }
   },
   created() {
+    console.log('CREATED')
+
     this.samples = CODE_SAMPLES[this.id]
+    // console.log(this.$router)
+  },
+  mounted() {
+    console.log('MOUNTED')
+    // console.log(this.$router)
+    console.log(this.$store.dispatch)
   },
 }
 </script>
