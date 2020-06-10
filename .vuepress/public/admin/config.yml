@@ -1,0 +1,15 @@
+backend:
+  name: git-gateway
+  branch: master
+
+publish_mode: editorial_workflow
+
+media_folder: .vuepress/public
+
+collections:
+  - name: "advanced_guides"
+    label: "Advanced Guides"
+    folder: "guides/advanced_guides"
+    create: false
+    fields:
+      - {label: "Body", name: "body", widget: "markdown"}
