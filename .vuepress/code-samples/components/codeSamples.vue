@@ -31,6 +31,7 @@ export default {
     }
   },
   created() {
+    $myFunction()
     this.samples = CODE_SAMPLES[this.id]
   },
 }
