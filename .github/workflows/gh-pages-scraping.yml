@@ -1,12 +1,16 @@
 name: GitHub pages and scraping
 
 on:
+  # trying and staging branches are for BORS config
   push:
     branches:
-    - master
+      - trying
+      - staging
+      - master
 
 jobs:
   build-deploy:
+    name: build github pages
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@master

@@ -1,8 +1,16 @@
 ---
 name: Check dead links
-on: [pull_request]
+on:
+  pull_request:
+  # trying and staging branches are for BORS config
+  push:
+    branches:
+      - trying
+      - staging
+      - master
 jobs:
-  build-deploy:
+  check-links:
+    name: check validity of links
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
